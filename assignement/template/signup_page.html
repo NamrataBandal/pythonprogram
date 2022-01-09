@@ -1,0 +1,120 @@
+<html>
+    <head>
+        <title>Signup Page</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: white;
+            }
+            button{
+                background-color: #4CAF50;
+                width: 25%;
+                padding: 15px;
+                color: black;
+                border: none;
+                float: center;
+                font-size: 15px;
+            }
+            label{
+                font-size: 20px;
+            }
+            form{
+                border: 3px solid #f1f1f1;
+            }
+            input[type=email],input[type=text]{
+                width: 50%;
+                font-size: 15px;
+                margin: 8px 0px;
+                padding: 12px 20px;
+                display: inline-block;
+                border: 2px solid green;
+                box-sizing: border-box;
+            }
+            input[type=date]{
+                width: 50%;
+                font-size: 15px;
+                margin: 8px 0px;
+                padding: 12px 20px;
+                display: inline-block;
+                border: 2px solid green;
+                box-sizing: border-box;
+            }
+            input[type=file]{
+                width: 50%;
+                font-size: 15px;
+                margin: 8px 0px;
+                padding: 12px 20px;
+                display: inline-block;
+                border: 2px solid green;
+                box-sizing: border-box;
+            }
+            select{
+            width: 50%;
+                font-size: 15px;
+                margin: 8px 0px;
+                padding: 12px 20px;
+                display: inline-block;
+                border: 2px solid green;
+                box-sizing: border-box;
+            }
+
+            button:hover{
+                opacity:0.7;
+
+            }
+            .container{
+                padding: 50px;
+                background-color: white;
+            }
+            .imgcontainer {
+                text-align: center;
+                margin: 24px 0 12px 0;
+            }
+              
+            img.avatar {
+                width: 10%;
+                border-radius: 50%;
+            }  
+        </style>
+        
+    </head>
+    <body>
+        <center><h1>Register From</h1></center>
+        <form action="#" method="post">
+            {% csrf_token %}
+            {% load static %}
+            <center><div class="container">
+                
+                <label for='first_name'><b>First Name : </b></label>
+		        <input type='text' placeholder="Enter your first name" name='first_name' required><br>
+		        <label for='last_name'><b>Last Name :</b></label>
+		        <input type='text' placeholder='Enter your last name' name='last_name' required><br>
+                <label for='dob'><b>Date Of Birth :</b></label>
+                <input type="date" placeholder='Enter your date of birth' name='dob' required><br>
+            	<label for ='user_name'><b>User Name :  </b></label>
+            	<input type="text" placeholder="Enter User name" name="user_name" float="right"  required><br>  
+            	<label for='password'><b>Password : </b></label>
+            	<input type="text" placeholder="Enter Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title ="Must contain at least one number and one uppercase and lowercase letter, and at least 8 characters" required><br>
+                <label for ='uplode_photo'><b>Uplode Photo   :   </b></label>
+                <Input Type = "File" accept=".png" name='uplode_photo'size="8mb" required><br>
+
+
+                <label for='security_que'><b>Security Question :</b></label>
+                <select>
+                    <option value="security_que">Select Option</option>
+                    <option value="security_que">What is your name?</option>
+                    <option value="security_que">What is your qulification?</option>
+                    <option value="security_que">What is your date of birth?</option>
+                    <option value="security_que">What is your mother name?</option>
+                </select><br>
+                <label for='security_ans'><b>Security Answer : </b></label>
+		        <input type='text' placeholder="Enter security answer" name='security_ans' required><br>
+                <label for='address'><b>Address : </b></label>
+		        <input type='text' placeholder="Enter your Address" name='address' required><br>
+		        
+            	<button type="submit"><b>Signup</b></button><br>     
+            	Already an accounct <a href="http://localhost:8000/login/"> Login </a>
+            </div></center>
+        </form>
+    </body>
+</html>
